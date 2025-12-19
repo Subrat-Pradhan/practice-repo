@@ -1,0 +1,29 @@
+{
+  "name": "private-practice-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "playwright:test": "playwright test",
+    "playwright:report": "playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Subrat-Pradhan/private-practice-repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Subrat-Pradhan/private-practice-repo/issues"
+  },
+  "homepage": "https://github.com/Subrat-Pradhan/private-practice-repo#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "cypress": "^15.8.1",
+    "typescript": "^5.9.3"
+  }
+}
