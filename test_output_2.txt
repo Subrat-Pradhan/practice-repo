@@ -1,0 +1,84 @@
+
+
+DevTools listening on ws://127.0.0.1:57731/devtools/browser/a5c72dfa-4866-4d0a-9816-e3fae56e9df7
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        15.8.1                                                                         │
+  │ Browser:        Electron 138 (headless)                                                        │
+  │ Node Version:   v22.21.0 (C:\Program Files\nodejs\node.exe)                                    │
+  │ Specs:          1 found (demowebshop.cy.js)                                                    │
+  │ Searched:       C:\Users\subra\OneDrive\Documents\GitHub\private-practice-repo\cypress-learnin │
+  │                 g\e2e\demowebshop.cy.js                                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  demowebshop.cy.js                                                               (1 of 1)
+
+
+  Demo Web Shop Automation
+    1) should browse, search, add to cart and checkout
+
+
+  0 passing (14s)
+  1 failing
+
+  1) Demo Web Shop Automation
+       should browse, search, add to cart and checkout:
+     CypressError: `cy.click()` can only be called on a single element. Your subject contained 2 elements. Pass `{ multiple: true }` if you want to serially click each element.
+
+https://on.cypress.io/click
+      at mouseAction (https://demowebshop.tricentis.com/__cypress/runner/cypress_runner.js:114590:68)
+      at Context.click (https://demowebshop.tricentis.com/__cypress/runner/cypress_runner.js:114757:14)
+      at wrapped (https://demowebshop.tricentis.com/__cypress/runner/cypress_runner.js:146027:19)
+      at <unknown> (https://demowebshop.tricentis.com/__cypress/runner/cypress_runner.js:151996:15)
+      at tryCatcher (https://demowebshop.tricentis.com/__cypress/runner/cypress_runner.js:1777:23)
+      at Promise._settlePromiseFromHandler (https://demowebshop.tricentis.com/__cypress/runner/cypress_runner.js:1489:31)
+      at Promise._settlePromise (https://demowebshop.tricentis.com/__cypress/runner/cypress_runner.js:1546:18)
+      at Promise._settlePromiseCtx (https://demowebshop.tricentis.com/__cypress/runner/cypress_runner.js:1583:10)
+      at _drainQueueStep (https://demowebshop.tricentis.com/__cypress/runner/cypress_runner.js:2381:12)
+      at _drainQueue (https://demowebshop.tricentis.com/__cypress/runner/cypress_runner.js:2370:9)
+      at Async._drainQueues (https://demowebshop.tricentis.com/__cypress/runner/cypress_runner.js:2386:5)
+      at Async.drainQueues (https://demowebshop.tricentis.com/__cypress/runner/cypress_runner.js:2256:14)
+
+
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     13 seconds                                                                       │
+  │ Spec Ran:     demowebshop.cy.js                                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\subra\OneDrive\Documents\GitHub\private-practice-repo\cypress-learning\     (1280x720)
+     screenshots\demowebshop.cy.js\Demo Web Shop Automation -- should browse, search,               
+      add to cart and checkout (failed).png                                                         
+
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✖  demowebshop.cy.js                        00:13        1        -        1        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✖  1 of 1 failed (100%)                     00:13        1        -        1        -        -  
+

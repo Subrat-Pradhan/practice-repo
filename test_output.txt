@@ -1,0 +1,73 @@
+
+
+DevTools listening on ws://127.0.0.1:61113/devtools/browser/a7f60376-a36b-4fa4-b920-9c2a87c66439
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        15.8.1                                                                         │
+  │ Browser:        Electron 138 (headless)                                                        │
+  │ Node Version:   v22.21.0 (C:\Program Files\nodejs\node.exe)                                    │
+  │ Specs:          1 found (demowebshop.cy.js)                                                    │
+  │ Searched:       C:\Users\subra\OneDrive\Documents\GitHub\private-practice-repo\cypress-learnin │
+  │                 g\e2e\demowebshop.cy.js                                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  demowebshop.cy.js                                                               (1 of 1)
+
+
+  Demo Web Shop Automation
+    1) should browse, search, add to cart and checkout
+
+
+  0 passing (15s)
+  1 failing
+
+  1) Demo Web Shop Automation
+       should browse, search, add to cart and checkout:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[type="radio"]`, but never found it. Queried from:
+
+              > cy.get(.attributes dd).eq(1)
+      at Context.eval (webpack://private-practice-repo/./cypress-learning/e2e/demowebshop.cy.js:32:39)
+
+
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     15 seconds                                                                       │
+  │ Spec Ran:     demowebshop.cy.js                                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\subra\OneDrive\Documents\GitHub\private-practice-repo\cypress-learning\     (1280x720)
+     screenshots\demowebshop.cy.js\Demo Web Shop Automation -- should browse, search,               
+      add to cart and checkout (failed).png                                                         
+
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✖  demowebshop.cy.js                        00:15        1        -        1        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✖  1 of 1 failed (100%)                     00:15        1        -        1        -        -  
+
