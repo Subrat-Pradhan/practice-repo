@@ -1,6 +1,8 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+
   e2e: {
     specPattern: "cypress-learning/e2e/**/*.cy.{js,jsx,ts,tsx}",
     supportFile: "cypress-learning/support/e2e.js",
@@ -8,6 +10,7 @@ module.exports = defineConfig({
     videosFolder: "cypress-learning/videos",
     screenshotsFolder: "cypress-learning/screenshots",
     setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);
       // implement node event listeners here
     },
   },
