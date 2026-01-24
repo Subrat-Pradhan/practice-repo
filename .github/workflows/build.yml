@@ -63,9 +63,10 @@ jobs:
         with:
           # SMTP settings (You need to add these secrets to your repo)
           server_address: smtp.gmail.com
-          server_port: 465
+          server_port: 587
           username: ${{ secrets.GMAIL_USERNAME }}
           password: ${{ secrets.GMAIL_PASSWORD }}
+          secure: false # STARTTLS uses false initially then upgrades
           subject: "Cypress CI Report: ${{ github.repository }} - ${{ job.status }}"
           to: subratkp27@gmail.com
           from: "Cypress Automated CI"
