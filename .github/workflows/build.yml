@@ -52,10 +52,47 @@ jobs:
           name: regression-report-group-${{ matrix.group }}
           path: cypress/reports/html
 
+  playwright-test:
+    name: Playwright Tests
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2] # Splitting tests into 2 shards
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: npx playwright test --shard=${{ matrix.shard }}/${{ strategy.job-total }}
+        continue-on-error: true
+
+      - name: Generate Allure Report
+        if: always()
+        run: npm run allure:generate
+
+      - name: Upload Allure Report Shard ${{ matrix.shard }}
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-allure-report-shard-${{ matrix.shard }}
+          path: allure-report
+
   notify:
     name: Email Notification
     runs-on: ubuntu-latest
-    needs: [smoke-test, regression-test]
+    needs: [smoke-test, regression-test, playwright-test]
     if: always()
     steps:
       - name: Send Summary Email
@@ -63,22 +100,23 @@ jobs:
         with:
           # SMTP settings (You need to add these secrets to your repo)
           server_address: smtp.gmail.com
-          server_port: 587
+          server_port: 465
           username: ${{ secrets.GMAIL_USERNAME }}
           password: ${{ secrets.GMAIL_PASSWORD }}
-          secure: false # STARTTLS uses false initially then upgrades
-          subject: "Cypress CI Report: ${{ github.repository }} - ${{ job.status }}"
+          secure: true # Using implicit SSL for port 465
+          subject: "CI Report: ${{ github.repository }} - ${{ job.status }}"
           to: subratkp27@gmail.com
-          from: "Cypress Automated CI"
+          from: "Automated CI Reporter"
           body: |
-            Cypress test execution has completed!
+            Continuous Integration execution has completed!
 
             Workflow: ${{ github.workflow }}
-            Status: ${{ job.status }}
+            Cypress Status: ${{ needs.smoke-test.result }} / ${{ needs.regression-test.result }}
+            Playwright Status: ${{ needs.playwright-test.result }}
             Branch: ${{ github.ref_name }}
             Commit: ${{ github.sha }}
 
             View full details and download reports here:
             https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-            Note: If tests failed, you can find detailed HTML reports and screenshots in the "Artifacts" section of the run link above.
+            Note: Detailed HTML reports (Mochawesome & Allure) and screenshots are available in the "Artifacts" section above.

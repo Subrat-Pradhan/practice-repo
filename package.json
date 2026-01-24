@@ -11,6 +11,10 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "playwright:test": "playwright test",
+    "playwright:smoke": "playwright test --grep @smoke",
+    "playwright:regression": "playwright test",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
     "playwright:report": "playwright show-report"
   },
   "repository": {
@@ -26,6 +30,8 @@
   "homepage": "https://github.com/Subrat-Pradhan/private-practice-repo#readme",
   "devDependencies": {
     "@playwright/test": "^1.57.0",
+    "allure-commandline": "^2.36.0",
+    "allure-playwright": "^3.4.5",
     "cypress": "^15.9.0",
     "cypress-mochawesome-reporter": "^4.0.2",
     "typescript": "^5.9.3"
