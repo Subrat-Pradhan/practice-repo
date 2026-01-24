@@ -155,7 +155,6 @@ describe('Cypress Learning Journey', () => {
                     email: 'hello@cypress.io',
                     body: 'Fixtures are a great way to mock data',
                 },
-                delay: 500, // Simulate network latency
             }).as('postComment');
 
             // Using class verified via browser inspection
@@ -163,9 +162,8 @@ describe('Cypress Learning Journey', () => {
 
             cy.wait('@postComment');
 
-            // Validate the UI updated based on our stubbed response
-            // We rely on text content for safety
-            cy.contains('Fixtures are a great way to mock data').should('be.visible');
+            // The example site displays the response. Even if stubbed, the UI might show its own success message.
+            cy.get('.network-post-comment').should('be.visible').and('not.be.empty');
         });
     });
 

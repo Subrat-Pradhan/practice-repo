@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "cypress:unit": "cypress run --spec \"cypress-learning/e2e/unit-tc/**/*.cy.{js,jsx,ts,tsx}\"",
+    "cypress:smoke": "cypress run --spec \"cypress-learning/e2e/demo_web_shop.cy.js\"",
+    "cypress:regression": "cypress run --spec \"cypress-learning/e2e/**/*.cy.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
