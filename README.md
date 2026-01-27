@@ -82,7 +82,7 @@ To update Cypress and Playwright to their latest versions, run:
 npm update
 ```
 
-### Clean Install
+### Clean Install:
 If you encounter weird issues, try deleting `node_modules` and reinstalling:
 ```bash
 rm -rf node_modules package-lock.json
