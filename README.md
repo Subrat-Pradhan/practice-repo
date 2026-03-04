@@ -2,7 +2,7 @@
 
 This repository is designed for learning and practicing JavaScript, Cypress, and Playwright. It separates the two testing frameworks into distinct directories to keep the workspace organized. 
 
-## 📂 Project Structure 
+## 📂 Project Structure   
 
 ```
 private-practice-repo/
